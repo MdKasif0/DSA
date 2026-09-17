@@ -1,42 +1,51 @@
 /*
-Q3. Count Values Greater Than K — Alert Detection
+Q2 Two Sum — Pair Detection
 
 Scenario
-A monitoring system records the response time of N requests. Requests taking more than a specified limit K are considered slow.
+A financial system analyzes a set of transaction amounts. During an investigation, analysts provide a target amount and want to know whether two different transactions together produced exactly that amount.
 
 Problem Statement
-Given N response times and a value K, determine how many response times are strictly greater than K.
+Given N integers and a target value T, find two different elements whose sum is exactly T.
+Assume that exactly one valid pair exists.
 
 Input
 6
-120 80 250 90 310 150
-150
+12 7 19 25 3 10
+22
 
 Output
-2
+12 10
+
 */
 
 #include <stdio.h>
+
 int main() {
 
-	int size;
-	printf("Enter the size of the array: ");
-	scanf("%d", &size);
-	int array[size];
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
 
-	for (int i = 0; i < size; i++) {
-		printf("Enter the %d element of the array: ", i);
-		scanf("%d", &array[i]);
-	}
-    int k;
-    printf("Enter the value : ");
-    scanf("%d", &k);
+    int array[size];
 
-    int inc=0;
-    for (int i = 0; i < size-1; i++) {
-        if (array[i] > k) {
-            inc++;
+    for (int i = 0; i < size; i++) {
+        printf("Enter the %d element of the array: ", i);
+        scanf("%d", &array[i]);
+    }
+
+    int num;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = i + 1; j < size; j++) {
+
+            if (array[i] + array[j] == num) {
+                printf("%d %d", array[i], array[j]);
+                return 0;
+            }
         }
     }
-    printf("The number of values greater than %d is: %d", k,inc);
+
+    return 0;
 }
