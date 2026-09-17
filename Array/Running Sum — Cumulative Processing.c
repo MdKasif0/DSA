@@ -32,7 +32,7 @@ int main() {
 
     int sum=0;
     printf("The array is: ");
-    for (int i = 0; i < size-1; i++) {
+    for (int i = 0; i < size; i++) {
         sum += array[i];
         printf("%d ", sum);
     }
