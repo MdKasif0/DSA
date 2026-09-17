@@ -1,3 +1,22 @@
+/*
+Q1 Running Sum — Cumulative Processing
+
+Scenario
+A monitoring system receives the number of requests handled by a server every hour.
+Instead of looking at each hour independently, the administrator wants to know the total number of requests handled from the beginning up to every hour.
+
+Problem Statement
+Given an array where arr[i] represents the number of requests received during hour i, modify the array so that arr[i] contains the total requests received from hour 0 through hour i.
+
+Input
+5
+10 15 20 12 18
+
+Output
+10 25 45 57 75
+
+*/
+
 #include <stdio.h>
 int main() {
 
